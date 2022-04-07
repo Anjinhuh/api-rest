@@ -7,5 +7,11 @@ module.exports = {
      },
      createUser(req, res){
         services.dbCreateUser(req, res)
+     },
+     deleteUser(req, res){
+        services.dbDeleteUser(req, res)
+     },
+     updateUser(req, res){
+        services.dbUpdateUser(req, res)
      }
 }

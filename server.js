@@ -14,8 +14,14 @@ app.use(bodyParser.json())
 app.get('/users', async (req, res) =>{
    controller.getUser(req, res)
 })
-app.post('/createUser/:id/:nome', async(req, res)=>{
+app.post('/createUser/:id/:name/:age', async(req, res)=>{
     controller.createUser(req, res)
+})
+app.delete('/deleteUser/:id', async(req, res)=>{
+    controller.deleteUser(req, res)
+})
+app.put('/updateUser/:id/:name/:age', async(req, res)=>{
+    controller.updateUser(req, res)
 })
 
 app.listen(port, () =>{

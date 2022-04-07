@@ -1,9 +1,18 @@
+const database = require('../db/connection')
+
+
 
 module.exports = {
     dbGetUser(req, res){
-        return res.json({id: 1, nome: 'Julinao'})
+        return database.GET_USERS(req, res)
     },
-    dbCreateUser(req, res){
-        return res.json({id: req.params.id, nome: req.params.nome})
+    async dbCreateUser(req, res){
+        await database.CREATE_USER_DB(req, res)
+    }, 
+    async dbDeleteUser(req, res){
+        await database.DELETE_USER_DB(req, res)
+    },
+    async dbUpdateUser(req, res){
+        await database.UPDATE_USER_DB(req, res)
     }
 }
